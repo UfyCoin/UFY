@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=UFY
+Comment=UFY P2P Cryptocurrency
+Comment[fr]=UFY, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=UFY, eşten eşe kriptografik sanal para birimi
+Exec=ufy-qt %u
+Terminal=false
+Type=Application
+Icon=ufy128
+MimeType=x-scheme-handler/ufy;
+Categories=Office;Finance;

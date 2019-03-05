@@ -1,0 +1,8 @@
+/usr/bin/ufy-cli		--	gen_context(system_u:object_r:ufy_exec_t,s0)
+/usr/sbin/ufyd		--	gen_context(system_u:object_r:ufy_exec_t,s0)
+/usr/lib(64)?/ufy/ufyd		--	gen_context(system_u:object_r:ufy_exec_t,s0)
+
+/etc/ufy(/.*)?		gen_context(system_u:object_r:ufy_conf_t,s0)
+/var/lib/ufy(/.*)?		gen_context(system_u:object_r:ufy_var_lib_t,s0)
+
+(/var)?/run/ufyd(/.*)?   gen_context(system_u:object_r:ufy_var_run_t,s0)

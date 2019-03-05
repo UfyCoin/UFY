@@ -1,0 +1,81 @@
+policy_module(ufy, 1.100.1)
+
+########################################
+#
+# Declarations
+#
+
+type ufy_t;
+type ufy_exec_t;
+init_daemon_domain(ufy_t, ufy_exec_t)
+
+permissive ufy_t;
+
+type ufy_initrc_exec_t;
+init_script_file(ufy_initrc_exec_t)
+
+type ufy_conf_t;
+files_type(ufy_conf_t)
+
+type ufy_var_lib_t;
+files_type(ufy_var_lib_t)
+
+type ufy_var_run_t;
+files_type(ufy_var_run_t)
+
+type ufy_port_t;
+corenet_port(ufy_port_t)
+
+########################################
+#
+# ufy local policy
+#
+allow ufy_t self:process { fork };
+
+allow ufy_t self:fifo_file rw_fifo_file_perms;
+allow ufy_t self:unix_stream_socket create_stream_socket_perms;
+
+manage_dirs_pattern(ufy_t, ufy_conf_t, ufy_conf_t)
+manage_files_pattern(ufy_t, ufy_conf_t, ufy_conf_t)
+
+manage_dirs_pattern(ufy_t, ufy_var_lib_t, ufy_var_lib_t)
+manage_files_pattern(ufy_t, ufy_var_lib_t, ufy_var_lib_t)
+files_var_lib_filetrans(ufy_t, ufy_var_lib_t, { dir file })
+
+manage_dirs_pattern(ufy_t, ufy_var_run_t, ufy_var_run_t)
+manage_files_pattern(ufy_t, ufy_var_run_t, ufy_var_run_t)
+
+sysnet_dns_name_resolve(ufy_t)
+corenet_all_recvfrom_unlabeled(ufy_t)
+
+allow ufy_t self:tcp_socket create_stream_socket_perms;
+corenet_tcp_sendrecv_generic_if(ufy_t)
+corenet_tcp_sendrecv_generic_node(ufy_t)
+corenet_tcp_sendrecv_all_ports(ufy_t)
+corenet_tcp_bind_generic_node(ufy_t)
+
+gen_require(`
+    type ufy_port_t;
+')
+allow ufy_t ufy_port_t:tcp_socket name_bind;
+
+gen_require(`
+    type ufy_port_t;
+')
+allow ufy_t ufy_port_t:tcp_socket name_connect;
+
+domain_use_interactive_fds(ufy_t)
+
+files_read_etc_files(ufy_t)
+
+miscfiles_read_localization(ufy_t)
+
+sysnet_dns_name_resolve(ufy_t)
+
+allow ufy_t ufy_exec_t:file execute_no_trans;
+allow ufy_t self:process setsched;
+corecmd_exec_ls(ufy_t)
+corenet_tcp_connect_http_port(ufy_t)
+dev_read_urand(ufy_t)
+fs_getattr_xattr_fs(ufy_t)
+kernel_read_system_state(ufy_t)
