@@ -89,30 +89,6 @@ Explorer http://explorer.ufycoin.com
  </tr>
  <tr height=21 style='mso-height-source:userset;height:15.75pt'>
   <td height=21 class=xl6417252 style='height:15.75pt'>40001-65000</td>
-  <td class=xl6617252>150</td>
-  <td class=xl6617252>50</td>
-  <td class=xl6617252>50</td>
-  <td class=xl6717252 align=right>75</td>
-  <td class=xl6817252 align=right>75</td>
- </tr>
- <tr height=21 style='mso-height-source:userset;height:15.75pt'>
-  <td height=21 class=xl6417252 style='height:15.75pt'>65001-100000</td>
-  <td class=xl6617252>225</td>
-  <td class=xl6617252>50</td>
-  <td class=xl6617252>50</td>
-  <td class=xl6717252 align=right>112.5</td>
-  <td class=xl6817252 align=right>112.5</td>
- </tr>
- <tr height=21 style='mso-height-source:userset;height:15.75pt'>
-  <td height=21 class=xl6417252 style='height:15.75pt'>100001-135000</td>
-  <td class=xl6617252>330</td>
-  <td class=xl6617252>50</td>
-  <td class=xl6617252>50</td>
-  <td class=xl6717252 align=right>165</td>
-  <td class=xl6817252 align=right>165</td>
- </tr>
- <tr height=21 style='mso-height-source:userset;height:15.75pt'>
-  <td height=21 class=xl6417252 style='height:15.75pt'>135001-170000</td>
   <td class=xl6617252>500</td>
   <td class=xl6617252>50</td>
   <td class=xl6617252>50</td>
@@ -120,12 +96,36 @@ Explorer http://explorer.ufycoin.com
   <td class=xl6817252 align=right>250</td>
  </tr>
  <tr height=21 style='mso-height-source:userset;height:15.75pt'>
+  <td height=21 class=xl6417252 style='height:15.75pt'>65001-100000</td>
+  <td class=xl6617252>1000</td>
+  <td class=xl6617252>50</td>
+  <td class=xl6617252>50</td>
+  <td class=xl6717252 align=right>500</td>
+  <td class=xl6817252 align=right>500</td>
+ </tr>
+ <tr height=21 style='mso-height-source:userset;height:15.75pt'>
+  <td height=21 class=xl6417252 style='height:15.75pt'>100001-135000</td>
+  <td class=xl6617252>2000</td>
+  <td class=xl6617252>50</td>
+  <td class=xl6617252>50</td>
+  <td class=xl6717252 align=right>1000</td>
+  <td class=xl6817252 align=right>1000</td>
+ </tr>
+ <tr height=21 style='mso-height-source:userset;height:15.75pt'>
+  <td height=21 class=xl6417252 style='height:15.75pt'>135001-170000</td>
+  <td class=xl6617252>2500</td>
+  <td class=xl6617252>50</td>
+  <td class=xl6617252>50</td>
+  <td class=xl6717252 align=right>1250</td>
+  <td class=xl6817252 align=right>1250</td>
+ </tr>
+ <tr height=21 style='mso-height-source:userset;height:15.75pt'>
   <td height=21 class=xl6417252 style='height:15.75pt'>170001-340000</td>
-  <td class=xl6617252>750</td>
+  <td class=xl6617252>2500</td>
   <td class=xl6617252>50</td>
   <td class=xl6617252>50</td>
-  <td class=xl6717252 align=right>375</td>
-  <td class=xl6817252 align=right>375</td>
+  <td class=xl6717252 align=right>1250</td>
+  <td class=xl6817252 align=right>1250</td>
  </tr>
  </table>
 
