@@ -3029,17 +3029,14 @@ bool CWallet::CreateCoinStake(
 
     if (listInputs.empty()) {
         LogPrintf("CreateCoinStake(): listInputs empty\n");
+        MilliSleep(50000); //Prevent lock spamming when no stakable inputs are present
         return false;
     }
-
-    if (GetAdjustedTime() - chainActive.Tip()->GetBlockTime() < 60){
-
-        if(Params().NetworkID() != CBaseChainParams::REGTEST){
-            MilliSleep(10000);
-        }else{
+    // Cleanup arbitrary sleep times in CreateCoinStake
+    if (GetAdjustedTime() - chainActive.Tip()->GetBlockTime() < 60) {
+        if (Params().NetworkID() == CBaseChainParams::REGTEST) {
             MilliSleep(1000);
         }
-
     }
 
     CAmount nCredit;

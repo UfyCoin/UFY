@@ -1895,16 +1895,24 @@ int64_t GetBlockValue(int nHeight)
         nSubsidy = 100 * COIN;
     } else if (nHeight <= 65000 && nHeight > 40000) {
         nSubsidy = 500 * COIN;
-    } else if (nHeight <= 100000 && nHeight > 65000) {
+    } else if (nHeight <= 80000 && nHeight > 65000) {
         nSubsidy = 1000 * COIN;
-    } else if (nHeight <= 135000 && nHeight > 100000) {
+    } else if (nHeight <= 90000 && nHeight > 80000) {
+        nSubsidy = 1500 * COIN;
+    } else if (nHeight <= 100000 && nHeight > 90000) {
         nSubsidy = 2000 * COIN;
-    } else if (nHeight <= 170000 && nHeight > 135000) {
+    } else if (nHeight <= 115000 && nHeight > 100000) {
         nSubsidy = 2500 * COIN;
-    } else if (nHeight <= 340000 && nHeight > 170000) {
-        nSubsidy = 2500 * COIN;
+    } else if (nHeight <= 130000 && nHeight > 115000) {
+        nSubsidy = 3000 * COIN;
+    } else if (nHeight <= 150000 && nHeight > 130000) {
+        nSubsidy = 3500 * COIN;
+    } else if (nHeight <= 175000 && nHeight > 150000) {
+        nSubsidy = 4000 * COIN;
+    } else if (nHeight <= 250000 && nHeight > 175000) {
+        nSubsidy = 1000 * COIN;
     } else {
-        nSubsidy = 5 * COIN;
+        nSubsidy = 250 * COIN;
     }
     return nSubsidy;
 }
@@ -4656,7 +4664,7 @@ bool ProcessNewBlock(CValidationState& state, CNode* pfrom, CBlock* pblock, CDis
 bool TestBlockValidity(CValidationState& state, const CBlock& block, CBlockIndex* const pindexPrev, bool fCheckPOW, bool fCheckMerkleRoot)
 {
     AssertLockHeld(cs_main);
-    assert(pindexPrev == chainActive.Tip());
+    assert(pindexPrev && pindexPrev == chainActive.Tip()); //Fix assertion failure in mining/staking
 
     CCoinsViewCache viewNew(pcoinsTip);
     CBlockIndex indexDummy(block);

@@ -17,7 +17,7 @@ class ClientModel;
 class SendCoinsRecipient;
 class WalletModel;
 class WalletView;
-class TradingDialog;
+// class TradingDialog; //cleanup, remove old trading dialog form
 class BlockExplorer;
 
 QT_BEGIN_NAMESPACE
